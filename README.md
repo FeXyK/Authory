@@ -47,5 +47,5 @@ MasterServerAuthString-gel
 
 # Pictures from the game
 
-![](Images/LoginScreen "LoginScreen")
-![](Images/Ingame "Ingame")
+![](Images/LoginScreen.jpg "LoginScreen")
+![](Images/Ingame.jpg "Ingame")
