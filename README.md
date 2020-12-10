@@ -34,8 +34,6 @@ szerepelnie.
 AuthoryMasterServer-t
 - MasterServerPort: Az a port amin az AuthoryMasterServer fut.
 
-# MasterServer: konfigurációs fájl:
-
 #### #Server details:
 - ServerAuthString: Egyezni kell az AuthoryServer konfigurációs fájlban beállított
 MasterServerAuthString-gel
