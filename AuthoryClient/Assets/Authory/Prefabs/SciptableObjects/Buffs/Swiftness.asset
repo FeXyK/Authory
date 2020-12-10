@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628ca489980699347b9e3595cb340a2e, type: 3}
+  m_Name: Swiftness
+  m_EditorClassIdentifier: 
+  BuffId: 4
+  BuffName: Swiftness
+  Description: Increases movement speed
+  ContentSprite: {fileID: 21300000, guid: d75c3ea4f69088244983a84c88525796, type: 3}

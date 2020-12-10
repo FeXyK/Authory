@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "AuthoryServer/1.0.0": {
+        "dependencies": {
+          "Lidgren.Network": "1.0.0"
+        },
+        "runtime": {
+          "AuthoryServer.dll": {}
+        }
+      },
+      "Lidgren.Network/1.0.0": {
+        "runtime": {
+          "Lidgren.Network.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AuthoryServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lidgren.Network/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
