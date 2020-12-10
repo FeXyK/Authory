@@ -26,7 +26,6 @@ hálózat külső IP címét adja-e meg a MesterServer számára, vagy a belső 
 Amennyiben az értéke hamis egy külső weboldalról (https://api.ipify.org) fogja letölteni a külső IP címet
 - ServerPort: A szerver csomópont kezdő portját határozza meg. Mindenképpen más legyen mint az AuthoryMasterServer-ben beállított.
 
-# AuthoryMasterServer config file
 #### #MasterServer details:
 - MasterServerAuthString: A MasterServer-en belül az AuthString-nél ugyanennek a stringnek kell
 szerepelnie.
@@ -34,11 +33,13 @@ szerepelnie.
 AuthoryMasterServer-t
 - MasterServerPort: Az a port amin az AuthoryMasterServer fut.
 
+
+# AuthoryMasterServer config file
 #### #Server details:
 - ServerAuthString: Egyezni kell az AuthoryServer konfigurációs fájlban beállított
 MasterServerAuthString-gel
 - ServerPort: A szerver ezen porton fog elindulni
-- #DatabaseDetails:
+#### #DatabaseDetails:
 - DBServer: Az adatbázis (MySql) szerver IP címe
 - DBName: Az adatbázis séma  ("authory", ha a mellékelt sql query-t használod)
 - DBUser: Az adatbázis sémában található táblákhoz hozzáféréssel rendelkező felhasználó
