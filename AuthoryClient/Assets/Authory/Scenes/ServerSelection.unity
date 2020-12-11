@@ -1452,10 +1452,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1857459566115350857, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 184.8
-      objectReference: {fileID: 0}
     - target: {fileID: 2047601196649113593, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2132,12 +2128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72499912f12d184f82c25f353222624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  UIController: {fileID: 0}
-  stop: 0
-  time: 0
-  Range: 0
-  Target: {fileID: 0}
 --- !u!114 &6109353233274912102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2150,12 +2140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72499912f12d184f82c25f353222624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  UIController: {fileID: 0}
-  stop: 0
-  time: 0
-  Range: 0
-  Target: {fileID: 0}
 --- !u!114 &6109353233421436095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2168,12 +2152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72499912f12d184f82c25f353222624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  UIController: {fileID: 0}
-  stop: 0
-  time: 0
-  Range: 0
-  Target: {fileID: 0}
 --- !u!114 &6109353233479748502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2186,12 +2164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72499912f12d184f82c25f353222624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  UIController: {fileID: 0}
-  stop: 0
-  time: 0
-  Range: 0
-  Target: {fileID: 0}
 --- !u!114 &6109353234514506682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,12 +2176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72499912f12d184f82c25f353222624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  UIController: {fileID: 0}
-  stop: 0
-  time: 0
-  Range: 0
-  Target: {fileID: 0}
 --- !u!114 &6109353234934695165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,12 +2188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72499912f12d184f82c25f353222624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  UIController: {fileID: 0}
-  stop: 0
-  time: 0
-  Range: 0
-  Target: {fileID: 0}
 --- !u!33 &6182681390047759489
 MeshFilter:
   m_ObjectHideFlags: 0

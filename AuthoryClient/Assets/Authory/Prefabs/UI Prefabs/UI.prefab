@@ -3022,7 +3022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChannelingBar: {fileID: 7688918808578836352}
   ChannelingSkill: {fileID: 305428765141400631}
-  SkillBarController: {fileID: 0}
+  SkillBarController: {fileID: 5455270337599596958}
 --- !u!1 &3650980323019789219
 GameObject:
   m_ObjectHideFlags: 0
