@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class MasterUIController : MonoBehaviour
 {
+    static MasterUIController instance;
+
     [SerializeField] GameObject LoginScreen = null;
     [SerializeField] GameObject CharacterSelectorScreen = null;
 
@@ -20,6 +22,15 @@ public class MasterUIController : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
         DontDestroyOnLoad(this);
     }
 
@@ -61,11 +72,13 @@ public class MasterUIController : MonoBehaviour
     public void SetActiveLoginScreen(bool value = true)
     {
         LoginScreen.SetActive(value);
+        CharacterSelectorScreen.SetActive(!value);
     }
 
     public void SetActiveCharacterScreen(bool value = true)
     {
         CharacterSelectorScreen.SetActive(value);
+        LoginScreen.SetActive(!value);
     }
 
     public string GetUsername()
@@ -91,5 +104,10 @@ public class MasterUIController : MonoBehaviour
     public void HideCharacterCreator()
     {
         CharacterCreator.ShowCreatorMenu(false);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

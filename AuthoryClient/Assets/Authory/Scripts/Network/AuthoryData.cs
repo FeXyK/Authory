@@ -98,7 +98,8 @@ public class AuthoryData
         {
             GameObject.Destroy(entity.Value.gameObject);
         }
-        GameObject.Destroy(Player.gameObject);
+        if (Player != null)
+            GameObject.Destroy(Player.gameObject);
 
         Entities.Clear();
         Player = null;

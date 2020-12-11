@@ -28,9 +28,19 @@ public class MasterClientManager : MonoBehaviour
     float nextTryTime;
     float tryDelay = 2f;
 
+    static MasterClientManager instance;
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
 
@@ -57,7 +67,6 @@ public class MasterClientManager : MonoBehaviour
     public void SendLogout()
     {
         MasterClient.Disconnect("Logout");
-        MasterUIController.SetActiveCharacterScreen(false);
         MasterUIController.SetActiveLoginScreen(true);
     }
 
@@ -138,7 +147,6 @@ public class MasterClientManager : MonoBehaviour
                         break;
                     case MasterMessageType.NewAccountConnection:
                         {
-                            MasterUIController.SetActiveLoginScreen(false);
                             MasterUIController.SetActiveCharacterScreen(true);
                             nextTryTime = Time.time;
                             RefreshCharacterList(msgIn);
@@ -166,7 +174,7 @@ public class MasterClientManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        if (MasterClient != null && MasterClient.ServerConnection.Status != NetConnectionStatus.Disconnected)
+        if (MasterClient != null && MasterClient.ServerConnection != null && MasterClient.ServerConnection.Status != NetConnectionStatus.Disconnected)
             MasterClient.Disconnect("Quit");
     }
 
@@ -279,6 +287,12 @@ public class MasterClientManager : MonoBehaviour
         {
             AuthoryClient = GameObject.FindObjectOfType<ClientManager>().AuthoryClient;
             UIController = GameObject.FindObjectOfType<UIController>();
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
+            MasterUIController.gameObject.SetActive(true);
+            MasterUIController.SetActiveLoginScreen();
         }
     }
 

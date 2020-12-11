@@ -126,13 +126,4 @@ public class AuthorySender
 
         Client.SendMessage(msgOut, NetDeliveryMethod.ReliableUnordered);
     }
-
-    public static void Disconnect()
-    {
-        NetOutgoingMessage msgOut = Client.CreateMessage();
-
-        msgOut.Write((byte)MessageType.Disconnect);
-
-        Client.SendMessage(msgOut, NetDeliveryMethod.ReliableUnordered);
-    }
 }

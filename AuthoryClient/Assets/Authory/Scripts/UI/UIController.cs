@@ -4,6 +4,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -36,7 +37,6 @@ public class UIController : MonoBehaviour
 
     //GameMenu
     [SerializeField] GameObject GameMenuPanel = null;
-    [SerializeField] GameObject OptionsPanel = null;
 
 
     //Combat
@@ -56,7 +56,12 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        IsActive = ChatType.isFocused || PrivateMessageRecepient.isFocused;
+        IsActive = ChatType.isFocused || PrivateMessageRecepient.isFocused || GameMenuPanel.activeSelf;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameMenuPanel.SetActive(!GameMenuPanel.activeSelf);
+        }
 
         chatLastActiveDelay -= Time.deltaTime;
 
@@ -79,14 +84,10 @@ public class UIController : MonoBehaviour
                     {
                         ChatType.Select();
                     }
-        }
-        Vector2 localMousePosition = ChatWindows[0].rectTransform.InverseTransformPoint(Input.mousePosition);
-        if (!ChatWindows[0].rectTransform.rect.Contains(localMousePosition))
-        {
-            ScrollDown();
+            GameOverPanel.SetActive(Player.Dead);
         }
 
-        GameOverPanel.SetActive(Player.Dead);
+        ScrollDown();
     }
 
     public void UpdateExperience(long newExptTick, long experience)
@@ -248,7 +249,11 @@ public class UIController : MonoBehaviour
 
     public void ScrollDown()
     {
-        ChatScrollRect.verticalNormalizedPosition = 0;
+        Vector2 localMousePosition = ChatWindows[0].rectTransform.InverseTransformPoint(Input.mousePosition);
+        if (!ChatWindows[0].rectTransform.rect.Contains(localMousePosition))
+        {
+            ChatScrollRect.verticalNormalizedPosition = 0;
+        }
     }
 
     private string GetCurrentTime()
@@ -263,19 +268,23 @@ public class UIController : MonoBehaviour
 
     public void Resume()
     {
-        OptionsPanel.SetActive(false);
         GameMenuPanel.SetActive(false);
     }
 
-    public void Options()
+    public void Logout()
     {
-        OptionsPanel.SetActive(true);
-        GameMenuPanel.SetActive(false);
+        FindObjectOfType<MasterClientManager>().MasterClient.Disconnect("Exit");
+        AuthoryClient.Client.Disconnect("Exit");
+
+        AuthoryData.Instance.Clear();
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene(0);
     }
 
     public void Quit()
     {
-        AuthorySender.Disconnect();
+        FindObjectOfType<MasterClientManager>().MasterClient.Disconnect("Exit");
+        AuthorySender.Client.Disconnect("Exit");
 
         Application.Quit();
     }

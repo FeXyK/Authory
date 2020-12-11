@@ -1976,30 +1976,6 @@ PrefabInstance:
       propertyPath: m_text
       value: "AuthoryMasterServer\u200B"
       objectReference: {fileID: 0}
-    - target: {fileID: 7691633440967027139, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 7691633440967027139, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 230
-      objectReference: {fileID: 0}
-    - target: {fileID: 7691633440967027139, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
-      propertyPath: m_Pivot.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7691633440967027139, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7691633440967027139, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7691633440967027139, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7795463160271553208, guid: 537d3a62476d96041a2f97b70d81cc2f, type: 3}
       propertyPath: m_IsActive
       value: 1
