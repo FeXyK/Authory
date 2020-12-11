@@ -113,6 +113,8 @@ public class ClientManager : MonoBehaviour
         AuthorySender.Movement();
     }
 
+    float delayUntilLoginScreenTrasfer = 5f;
+
     /// <summary>
     /// Calls the Clients read method for reading messages, and drops back to login screen if connection disconnected.
     /// </summary>
@@ -120,9 +122,17 @@ public class ClientManager : MonoBehaviour
     {
         if (AuthoryClient.Client != null && AuthoryClient.Client.ServerConnection == null)
         {
-            AuthoryClient.Data.Clear();
-            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-            SceneManager.LoadScene(0);
+            delayUntilLoginScreenTrasfer -= Time.deltaTime;
+            if (delayUntilLoginScreenTrasfer < 0)
+            {
+                AuthoryClient.Data.Clear();
+                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+                SceneManager.LoadScene(0);
+            }
+        }
+        else
+        {
+            delayUntilLoginScreenTrasfer = 5f;
         }
 
         AuthoryClient.Read();
